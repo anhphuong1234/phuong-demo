@@ -1,0 +1,138 @@
+/* Mobile and Tablet */
+@media (max-width: 1023px){
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    .header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+    .header__cart-list{
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 100%;
+        padding: 0 calc((100% - 648px) / 2);
+    }
+    .header__cart-list::after{
+        display: none;
+    }
+    .app__container{
+        margin-top: calc(var(--header-height) + var( --header-sort-bar-height));
+    }
+    .header__sort-bar{
+        display: flex;
+    }
+    .app__content{
+        padding-top: 0;
+    }
+    .header__sort-item{
+        position: relative;
+    }
+    .header__sort-item:nth-of-type(2):after{
+        position: absolute;
+        content: "";
+        top: 44px;
+        width: 100%;
+        left: 0;
+        height: 3px;
+        background-color: var(--primary-color-rgba);
+    }
+    .mobile-category{
+        display: block;
+    }
+}
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+    :root {
+        --navbar-height: 0;
+        --header-height: 68px;
+    }
+    .hide-on-tablet{
+        display: none;
+    }
+    .header__cart{
+        width: 80px;
+        text-align: right;
+    }
+}
+/* Mobile */
+@media (max-width: 739px){
+    :root {
+        --navbar-height: 0;
+        --header-height: 56px;
+    }
+    .hide-on-mobile{
+        display: none;
+    }
+    .header-with-search{
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+    .header__cart,
+    .header__logo{
+        width: unset;
+    }
+    .header-search{
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        height: 40px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        z-index: 1;
+        padding: 5px 16px;
+        animation: mobileSearchSidIn linear 0.3s;
+        display: none;
+    }
+    @keyframes mobileSearchSidIn {
+        from {
+            opacity: 0;
+            top: var(--header-height);
+        }
+        to{
+            opacity: 1;
+            top: var(--header-height);
+        }
+    }
+    .header-search-history{
+        position: fixed;
+        width: 100%;
+        top: calc(var(--header-height) + var(--header-sort-bar-height));
+        left: 0;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    .pagination-item__link{
+        height: 28px;
+        min-width: 12px;
+    }
+    .app__content{
+        margin: 0;
+    }
+    .header__mobile-search{
+        display: block;
+    }
+    .footer__heading{
+        text-align: center;
+    }
+    .footer__content{
+        padding: 0 16px;
+    }
+    .footer__download,
+    .footer-item__link{
+        justify-content: center;
+    }
+    .footer__download-app{
+        flex: unset;
+    }
+    .footer__download-app-link{
+        display: block;
+        padding: 6px 8px;
+    }
+    .header__bars{
+        display: block;
+    }
+}
